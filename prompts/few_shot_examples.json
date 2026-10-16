@@ -1,0 +1,33 @@
+[
+  {
+    "input": "20万以内、续航500公里以上的纯电SUV有什么推荐？",
+    "output": {
+      "intent": "购车推荐",
+      "entities": {
+        "budget_max": 200000,
+        "energy_type": "纯电",
+        "body_type": "SUV",
+        "range_min_km": 500,
+        "hard_constraints": ["budget_max", "energy_type", "body_type", "range_min_km"]
+      }
+    }
+  },
+  {
+    "input": "不考虑纯电，宋和Model Y怎么选？",
+    "output": {
+      "intent": "车型对比",
+      "entities": {
+        "models": ["特斯拉 Model Y"],
+        "negative_constraints": [{"field": "energy_type", "value": "纯电"}],
+        "ambiguous_mentions": ["宋（缺少完整车型名称）"]
+      }
+    }
+  },
+  {
+    "input": "小米SU7多少钱？",
+    "output": {
+      "intent": "价格查询",
+      "entities": {"models": ["小米 SU7"]}
+    }
+  }
+]
